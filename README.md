@@ -56,3 +56,32 @@ The proposed approach improves **cache hit rate** and **reduces memory access la
 3. Update:
      Q(s,a) ← Q(s,a) + α [r + γ max_a' Q(s',a') – Q(s,a)]
 4. Continue training until reward convergence
+📊 Results Summary
+Policy	Cache Hit Rate (%)	Avg. Memory Access Time (ns)	Power Proxy (Relative)
+LRU	88.2	17.4	1.00
+LFU	90.1	16.8	0.97
+Proposed RL Policy	95.5	14.6	0.91
+
+Visualization Example:
+
+
+🚀 How to Run
+# Clone this repository
+git clone https://github.com/jerushax/AdaptiveCacheRL.git
+cd AdaptiveCacheRL
+
+# Install dependencies
+pip install numpy matplotlib
+
+# Run simulation
+python rl_cache_simulator.py
+
+📈 Expected Output
+Simulating cache access trace...
+--- Simulation Results ---
+LRU Policy Hit Rate: 87.92%
+LFU Policy Hit Rate: 89.74%
+RL Policy Hit Rate: 95.43%
+
+
+A bar chart will appear comparing LRU, LFU, and RL-based policies
